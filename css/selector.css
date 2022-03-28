@@ -1,0 +1,33 @@
+/* Element Selector */
+body{
+    background-color: #FF00FF;
+}
+
+h1{
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+p{
+    color: red;
+}
+
+/* ID Selector */
+#title{
+    font-size: 2em;
+}
+
+/* Class Selector */
+.gray{
+    color: gray;
+}
+
+/* Atribute Selector */
+[title]{
+    color: orange;
+}
+
+/* Pseudo-class Selector */
+a:hover{
+    text-decoration: underline;
+    background-color: #0000FF;
+}

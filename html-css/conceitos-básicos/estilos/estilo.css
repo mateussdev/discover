@@ -1,0 +1,38 @@
+/* essa regra irá definir o tamanho de toda a fonte do documento, a familia tipográfica, e a cor do fundo da página */
+html{
+  font-size: 10px;
+  font-family: 'Roboto', sans-serif;
+  background-color: #00539F;
+}
+
+/* essa regra irá definir o tamanho da caixa(body), a margem, a cor do fundo, o espaçamento dentro da caixa, e uma borda */
+body{
+  width: 600px;
+  margin: 0 auto;
+  background-color: #FF9500;
+  padding: 0 20px 20px 20px;
+  border: 5px solid black;
+}
+
+/* essa regra irá definir o tamanho da fonte do título(h1), irá centralizar o texto, a margem do título, o espaçamento, a cor, e uma bordar personalizada */
+h1{
+  font-size: 60px;
+  text-align: center;
+  margin: 0;
+  padding: 20px 0;
+  color: #00539F;
+  text-shadow: 3px 3px 1px black;
+}
+
+/* essa regra irá definir a imagem como um bloco(conceito de box-model), e a margem(cetralizando a imagem de acord com a caixa pai(body) */
+img{
+  display: block;
+  margin: 0 auto;
+}
+
+/* essa regra irá definir o tamanho da fonte dos parágrafos e dos itens da lista não ordenada, a altura das linhas, e o espaço entres as letras */
+p, li{
+  font-size: 16px;
+  line-height: 2;
+  letter-spacing: 1px;
+}

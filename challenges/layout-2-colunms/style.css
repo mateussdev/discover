@@ -1,0 +1,21 @@
+*{
+    margin: 0;
+}
+
+main{
+    display: flex;
+    flex-direction: row;
+    gap: 1rem;
+    margin: 50px 1rem;
+}
+
+aside#content{
+    background: gray;
+    height: 80vh;
+    flex-basis: 25%;
+}
+
+article#main-content{
+    background: rgb(214, 214, 214);
+    flex: 100%;
+}

@@ -1,0 +1,22 @@
+.box {
+    border: 1px dashed red;
+    display: flex;
+}
+
+.box div{
+    border: 1px solid;
+
+    width: 20px;
+}
+.box div:nth-child(1){
+   order: 4; 
+}
+.box div:nth-child(2){
+    order: 3;
+}
+.box div:nth-child(3){
+    order: 2;
+}
+.box div:nth-child(4){
+    order: 1;
+}
