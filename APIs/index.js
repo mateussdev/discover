@@ -1,0 +1,49 @@
+// CREATING A SERVER WITH EXPRESS
+const express = require('express')
+
+const app = express()
+
+app.listen('3000')
+
+// middleware
+app.use(express.json())
+
+/* API no Back-End
+// GET
+app.route('/').get( (req, res) => res.send("Hello, World") )
+app.route('/about').get( (req, res) => res.send("Sobre o projeto") )
+
+// POST
+app.route('/').post( (req, res) => console.log(req.body) )
+app.route('/').post( (req, res) => res.send(req.body) )
+
+// PUT
+let author = "Mateus"
+
+app.route('/').get( (req, res) => res.send(author) )
+
+app.route('/').put( (req, res) => {
+  author = req.body.author
+  res.send(author)
+} )
+
+// DELETE
+app.route('/:identificador').delete( (req, res) => {
+  res.send(req.params.identificador)
+} ) 
+*/
+
+
+// Parâmetros nas Requisições
+// app.route('/').get( (req, res) => res.send(req.query.name) )
+
+// app.route('/').post( (req, res) => res.send(req.body) )
+
+// app.route('/:parametro').get( (req, res) => res.send(req.params.parametro) )
+
+// BODY Params
+// o BODY pode ser recebido pelo POST, PUT e PATCH
+// app.route('/').post( (req, res) => {
+//   const {name, age} = req.body
+//   res.send(`Meu nome é ${name} e eu tenhos ${age} anos.`)
+// } )
