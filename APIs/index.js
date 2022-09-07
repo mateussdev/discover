@@ -47,3 +47,13 @@ app.route('/:identificador').delete( (req, res) => {
 //   const {name, age} = req.body
 //   res.send(`Meu nome é ${name} e eu tenhos ${age} anos.`)
 // } )
+
+// ROUTE PARAMS
+// app.route('/').get( (req, res) => res.send( "Hello, World!" ) )
+// app.route('/:variavel').get( (req, res) => res.send( req.params.variavel ) )
+// app.route('/identidade/:nome').get( (req, res) => res.send( req.params.nome ) )
+
+// QUERY PARAMS
+app.route('/').get( (req, res) => res.send( req.query ) )
+
+app.route('/about/user').get( (req, res) => res.send( req.query.nome ) )
