@@ -9,10 +9,4 @@ app.listen('3000');
 // middleware
 app.use(express.json());
 
-// API GitHub
-app.route('/').get( (req, res) => {
-  axios.get('https://api.github.com/users/mateussdev')
-  .then(result => res.send(result.data)) // pega todas as informações públicas de um perfil no github
-  // .then(result => res.send(`<img src="${result.data.avatar_url}"/>`))
-  .catch(error => console.log(error))
-} );
+// API no Front-End com Fetch
