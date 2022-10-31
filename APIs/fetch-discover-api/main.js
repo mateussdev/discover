@@ -31,13 +31,34 @@ function addUser(newUser) {
     .catch(error => console.error(error));
 }
 
+function updateUser(updatedUser) {
+  fetch(`${url}/1`, {
+    method: "PUT",
+    body: JSON.stringify(updatedUser),
+    headers: {
+      "Content-type": "application/json; charset=UTF-8"
+    }
+  })
+    .then(response => response.json())
+    .then(data => (alertApi.textContent = data))
+    .catch(error => console.error(error));
+}
+
 const newUser = {
   name: "Mateus Silva",
   avatar: "https://github.com/mateussdev.png",
   city: "Ceará"
 };
 
-// addUser(newUser);
+addUser(newUser);
+
+const updatedUser = {
+  name: "Mateus Silva",
+  avatar: "https://github.com/mateussdev.png",
+  city: "Tabuleiro do Norte"
+};
+
+updateUser(updatedUser);
 
 getUsers();
 getUser();
