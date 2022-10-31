@@ -7,8 +7,8 @@ function getUsers() {
     .catch(error => console.error(error));
 }
 
-function getUser() {
-  fetch(`${url}/1`)
+function getUser(id) {
+  fetch(`${url}/${id}`)
     .then(response => response.json())
     .then(data => {
       userName.textContent = data.name;
@@ -31,10 +31,22 @@ function addUser(newUser) {
     .catch(error => console.error(error));
 }
 
-function updateUser(updatedUser) {
-  fetch(`${url}/1`, {
+function updateUser(updatedUser, id) {
+  fetch(`${url}/${id}`, {
     method: "PUT",
     body: JSON.stringify(updatedUser),
+    headers: {
+      "Content-type": "application/json; charset=UTF-8"
+    }
+  })
+    .then(response => response.json())
+    .then(data => (alertApi.textContent = data))
+    .catch(error => console.error(error));
+}
+
+function deleteUser(id) {
+  fetch(`${url}/${id}`, {
+    method: "DELETE",
     headers: {
       "Content-type": "application/json; charset=UTF-8"
     }
@@ -58,7 +70,9 @@ const updatedUser = {
   city: "Tabuleiro do Norte"
 };
 
-updateUser(updatedUser);
+updateUser(updatedUser, 1);
+
+deleteUser(2);
 
 getUsers();
-getUser();
+getUser(1);
