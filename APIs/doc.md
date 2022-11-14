@@ -202,3 +202,125 @@ function deleteUser(id) {
 
 deleteUser(2);
 ```
+
+## API no Front-End com Axios
+
+Usando jsDelivr CDN
+
+```html
+<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+```
+
+### GET
+
+```js
+const url = "http://localhost:5500/api";
+
+function getUsers() {
+  axios
+    .get(url)
+    .then(response => {
+      apiResult.textContent = JSON.stringify(response.data);
+    })
+    .catch(error => console.error(error));
+}
+
+getUsers();
+```
+
+### POST
+
+```js
+function addNewUser() {
+  axios
+    .post(url, {
+      name: "Mateus Silva",
+      avatar: "https://github.com/mateussdev.png",
+      city: "Ceará"
+    })
+    .then(response => {
+      console.log(response);
+    })
+    .catch(error => console.error(error));
+}
+
+addNewUser();
+```
+
+> O objeto pode ser armazenado em uma variável e passado como parâmetro.
+
+```js
+function addNewUser(newUser) {
+  axios
+    .post(url, newUser)
+    .then(response => {
+      console.log(response);
+    })
+    .catch(error => console.error(error));
+}
+
+const newUser = {
+  name: "Fulano de Tal",
+  avatar: "https://picsum.photos/200/300",
+  city: "Rio de Janeiro"
+};
+addNewUser(newUser);
+```
+
+### GET com Parametros
+
+```html
+<p id="userID"></p>
+<p id="userName"></p>
+<p id="userCity"></p>
+<img src="" id="userAvatar" />
+```
+
+```js
+function getUser(id) {
+  axios
+    .get(`${url}/${id}`)
+    .then(response => {
+      const data = response.data;
+      userID.textContent = data.id;
+      userName.textContent = data.name;
+      userCity.textContent = data.city;
+      userAvatar.src = data.avatar;
+    })
+    .catch(error => console.error(error));
+}
+
+getUser(4);
+```
+
+### PUT
+
+```js
+function updateUser(id, updatedUser) {
+  axios
+    .put(`${url}/${id}`, updatedUser)
+    .then(response => console.log(response))
+    .catch(error => console.error(error));
+}
+
+const updatedUser = {
+  name: "Marcelo Calvo",
+  avatar: "https://picsum.photos/200/300",
+  city: "Ceará"
+};
+
+updateUser(5, updatedUser);
+```
+
+### DELETE
+
+```js
+function deleteUser(id) {
+  axios
+    .delete(`${url}/${id}`)
+    .then(response => console.log(response))
+    .catch(error => console.error(error));
+}
+
+deleteUser(5);
+```
