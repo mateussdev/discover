@@ -226,3 +226,134 @@ type UserResponse = {
 
 let userResponse = {} as UserResponse;
 ```
+
+## Objetos
+
+Nessa aula vamos aprendemos como criar tipagens utilizando objetos no TypeScript.
+
+```ts
+type Point = {
+  x: number;
+  y: number;
+};
+
+function printCoord(points: Point) {
+  console.log(`O eixo x é: ${points.x}`);
+  console.log(`O eixo y é: ${points.y}`);
+}
+
+printCoord({ x: 110, y: 60 });
+```
+
+Resultado do log:
+
+```log
+[LOG]: "O eixo x é: 101"
+------------------------
+[LOG]: "O eixo y é: 50"
+```
+
+## Opcional
+
+Para informamos que uma propriedade é opcional inserimos o sinal de ?
+
+Veja o exemplo:
+
+```ts
+type User = {
+  name: string;
+  email: string;
+  age: number;
+  isAdmin?: boolean;
+};
+
+let newUser: User = {
+  name: "Mateus",
+  email: "mateus@email.com",
+  age: 20
+};
+```
+
+## Intersecção de tipos
+
+A intersecção de tipos como o próprio nome já diz, podemos unir dois tipos e usar as suas propriedades dentro de um objeto.
+
+Segue o exemplo abaixo:
+
+```ts
+type User = {
+  id: number;
+  name: string;
+};
+
+type Char = {
+  nickname: string;
+  level: number;
+};
+
+type PlayerInfo = User & Char;
+
+let info: PlayerInfo = {
+  id: 1,
+  name: "Mateus Silva",
+  nickname: "mateussdev",
+  level: 4
+};
+```
+
+## Interface
+
+Outra maneira de criar tipagens no TypeScript é utilizando a interface .
+
+Segue o exemplo:
+
+```ts
+interface User {
+  id: number;
+  name: string;
+}
+
+let newUser: User = {
+  id: 1,
+  name: "Mateus"
+};
+
+// também assim
+
+function registerNewUser(newUser: User) {
+  newUser.id;
+  newUser.name;
+}
+```
+
+## Type e Interface
+
+O objetivo de ambos serve para definir tipagens no TypeScript. O type é mais recomendado por ser mais simples, fácil de lidar com tipos primitivos, por ser mais flexível. Já as interfaces são utilizadas normalmente em criação de libs, para aqueles que gostam da programação orientada a objetos.
+
+O exemplo abaixo mostra a diferença na sintaxe e união entre type e inteface:
+
+```ts
+type TUser = {
+  id: number;
+  name: string;
+};
+
+type TPayment = {
+  method: string;
+};
+
+// Fazendo união com Type
+type TAccount = TUser & TPayment;
+
+interface IUser {
+  id: number;
+  name: string;
+}
+
+interface IPayment {
+  method: string;
+}
+
+// Fazendo união com Interface
+interface IAccount extends IUser, IPayment {}
+```
