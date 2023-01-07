@@ -2,6 +2,18 @@
 
 ## Verificação tipo estático
 
+Já sabemos que o TypeScript verifica erros antes da execução, mas vamos ver isso na prática:
+
+```ts
+const userName = "João Inácio";
+
+userName();
+```
+
+    Ao tentar como uma função o TypeScript nos avisará que o que estamos querendo executar é uma variável do tipo String.
+
+Exemplo de tipo estático: 
+
 ```ts
 function sum(a: number, b: number) {
   return a + b;
@@ -11,6 +23,10 @@ console.log(sum(2, 3));
 ```
 
 ## Compilação
+
+O TypeScript é sempre compilado para JavaScript, mas normalmente não estamos vendo isso. Observe os exemplos:
+
+Código em TypeScript:
 
 ```ts
 function showTicket(user: string, ticket: number) {
