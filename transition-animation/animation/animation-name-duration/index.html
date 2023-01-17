@@ -14,7 +14,7 @@
       position: relative;
 
       animation-name: example-two;
-      animation-duration: 4s;
+      animation-duration: 10s;
     }
 
     @keyframes example-one {
@@ -30,18 +30,32 @@
     @keyframes example-two {
       0% {
         background-color: blueviolet;
+        top: 0;
+        left: 0;
       }
 
       25% {
         background-color: rosybrown;
+        top: 0;
+        left: 600px;
       }
 
       50% {
         background-color: blue;
+        top: 600px;
+        left: 600px;
+      }
+
+      75% {
+        background-color: yellow;
+        top: 600px;
+        left: 0;
       }
 
       100% {
-        background-color: yellow;
+        background-color: red;
+        top: 0;
+        left: 0;
       }
     }
   </style>
